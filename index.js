@@ -3,6 +3,8 @@ const app = express();
 import dotenv from "dotenv";
 dotenv.config();
 
+const port = process.env.PORT || 4000;
+
 import morgan from "morgan";
 import bodyParser from "body-parser";
 
@@ -28,4 +30,4 @@ app.get("/", async (req, res) => {
   res.send(data ?? error);
 });
 
-app.listen(3000, () => console.log("Server ready on port 3000."));
+app.listen(port, () => console.log("Server ready on port 3000."));
